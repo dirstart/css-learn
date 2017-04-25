@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{
+		margin: 0;
+	}
+	.box1{
+		float: left;
+		width: 50%;
+		background: #f3f;
+	}
+	.box1 p{
+		background: yellow;
+	}
+	.box2{
+		float: left;
+		width: 50%;
+		background: #fef;
+	}
+	p{
+		margin-top: 0;
+	}
+	.box2{
+		margin-top: 100px;
+		height: 90px;
+		line-height: 90px;
+/*		vertical-align: middle;*/
+		text-align:center;
+	}
+	span{
+		border: 1px solid #000;
+		background: red;
+		padding-top: 100px;
+		/*行级元素，margin-top和margin-bottom均无效*/
+		padding-bottom: 100px;
+/*		margin-left: 100px;*/
+		padding-left: 100px;
+		padding-right: 100px;
+		line-height: 30px;
+
+	}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<p>wlfjwlfjlwjfwfffffffff</p>
+	</div>
+	<div class="box2">
+		<span>22222222222222222</span>
+		<p></p>
+	</div>
+</body>
+<script type="text/javascript">
+	function getStyle(ele){
+		var style=null;
+		if(window.getComputedStyle){
+			style=window.getComputedStyle(ele,null);
+		}else{
+			style.currentStyle;
+		}
+		return style;
+	}
+	var oBox=document.getElementsByTagName("div")[0];
+	console.log(getStyle(oBox).margin);
+
+	//1.通过element.style属性来获取
+			// console.log(obj.style.color);
+			// 只能获取行内样式，不能获取style标签中的样式，也不能获取外部样式
+	//2.通过getComputed和currentStyle来获取
+			// getComputedStyle使用环境为chrome/Safari/firefox IE 9,10,11
+			// currentStyle在IE里能得到完美支持，chrome不支持，ff不支持
+
+	//3.获取样式兼容写法
+ //    //获取非行间样式(style标签里的样式或者link css文件里的样式)，obj是元素，attr是样式名
+ //    function getStyle(obj,attr){
+ //       //针对IE
+ //       if(obj.currentStyle){
+ //         return obj.currentStyle[attr];               //由于函数传过来的attr是字符串，所以得用[]来取值
+ //       }else{
+ //         //针对非IE
+ //         return window.getComputedStyle(obj,false)[attr];
+ //       }
+ //    }
+ //    /*
+ //       获取或者设置css属性
+     
+ //    */
+ //    function css(obj,attr,value){
+ //       if(arguments.length == 2){
+ //         return getStyle(obj,attr);
+ //       }else{   
+ //         obj.style[attr] = value;
+ //       }
+ //    }
+
+</script>
+</html>
