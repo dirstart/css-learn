@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.outer{
+		background: #f0f0f0;
+		width: 1100px;
+		height: 500px;
+		margin:0 auto;
+		position: relative;
+	}
+	.pseudo{
+		position: absolute;
+		left: 50%;
+		top: 0;
+		margin-left: -78px;
+		width: 156px;
+		height: 75px;
+		text-align: center;
+		background: purple;
+		color: #fff;
+		line-height: 65px;
+	}
+	.pseudo:after{
+		position: absolute;
+		content: '';
+		left: 0;
+		bottom: 0;
+		width: 0;
+		/*下次要找个时间弄清楚相关的伪类机制，关于它是怎么啃缺口的*/
+		height: 0;
+		border-left: 78px solid transparent;
+		border-right: 78px solid transparent;
+/*		border-bottom: 10px solid #fff;*/
+		border-bottom: 10px solid #f0f0f0;
+
+	}
+	</style>
+</head>
+<body>
+<!-- 伪类实现一个图形 -->
+	<div class="outer">
+		<div class="pseudo">
+			菜单
+		</div>
+	</div>
+</body>
+</html>
