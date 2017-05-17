@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+
+			animation: myfirst 5s;
+		}
+		@keyframes myfirst{
+			0%{background: red;opacity: 0;}
+			50%{background: yellow;transform: rotate(720deg);opacity: 1;}
+			100%{background: blue;opacity: 0;transform: rotate(0deg);}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
