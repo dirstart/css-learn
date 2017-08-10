@@ -3,6 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<!-- 出现input和button高度不同的根本原因，还是因为button计算高度的规则是
+			将border也算在了高度里面，所以，同等高度下的input和button，button的高度总是比较小的。
+			我们可以通过 border-sizing:border-box让他们计算高度的方式变成一样的，也可以说
+
+			我们这里其实是委屈input让它的高度计算方式和button一样，变小了。
+
+			然后接踵而至的是 input 和 button 的对其问题，现在
+
+			另外，要特别说明的是：
+			1.该现象在chrome中表现为 右边button偏高
+			2. 在Firefox中表现为 正常！
+			3. 在 IE9 中表现为 button偏低
+
+			另外的另外，这个是博客上看到的：
+			button和text之间的空格 ！！！！！！！！这个问题在chrome上并没有
+			原因呢是他们是inline-block，必然带有内联元素的属性 就是内容间的间隔
+			两个常用的方法;1.在父元素设置font-size:0px;2.去掉代码中两个input间的空格，有种显示上比较优雅的方式，就是用注释（这是从张鑫旭大神那看来的）
+
+	 -->
 	<style type="text/css">
 		input,button{
 			/*border: none;*/
@@ -10,11 +29,19 @@
 			padding: 0;
 			box-sizing: border-box;
 			height: 30px;
-			vertical-align: middle;
+			/*vertical-align: middle;*/
+			/*vertical-align: top;*/
+			/*vertical-align: baseline;*/
+		}
+		div{
+			height:30px;
+			background: #03bfe1;
 		}
 	</style>
 </head>
 <body>
-	<input /><button>提交</button>
+	<div>
+		<input /><button>提交</button>
+	</div>
 </body>
 </html>
