@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="./third.css" />
+	<style type="text/css">
+		.foo{
+			float: left;
+			margin-bottom: 10px;
+			width: 200px;
+			height: 200px;
+			background-color: #555;
+		}
+
+		.box2{
+			/*clear: both;*/
+			float: left;
+			width: 200px;
+			height: 300px;
+			background-color: #f44;
+		}
+	</style>
+</head>
+<body>
+	<div class="foo" style="background-color:#0f0;width:800px;"></div>
+	<div class="foo"></div>
+
+	<div class="box1" style="float:left;width: 100px;height: 100px;background-color: #000;"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+</body>
+<script type="text/javascript">
+// 1.写标签里的样式，优先级最高。获取的时候可以直接 style[name]或者 style.xx   PS:这是js中获取对象的两种方式 . 的话会比较符合语义化，这个叫做内联式。例子： <span style="color:blue" ></span>
+// 2.写在style中的样式，优先级排第二。获取的时候无法直接用style.xx获取。得调用相关函数获取。这个叫做嵌入式。例子：<style type="text/css"> ... </style>
+// 3.外部式css，也叫外联式。例子：  <link href="base.css" rel="stylesheet" type="text/css" />
+
+// 优先级总结：  内联式 > 嵌入式 > 外部式 . 简单来说，就近原则。
+
+/*   为什么引入了JS函数获取css
+解决方案：引入currentStyle,runtimeStyle,getComputedStyle style 标准的样式,可能是由style属性指定的！
+runtimeStyle 运行时的样式！如果与style的属性重叠，将覆盖style的属性！
+currentStyle 指 style 和 runtimeStyle 的结合！ 通过currentStyle就可以获取到通过内联或外部引用的CSS样式的值了（仅限IE） 如：document.getElementById("test").currentStyle.top
+要兼容FF，就得需要getComputedStyle 出马了
+*/
+
+/*
+	js获取样式的各种方法和局限性
+	1.ele.style
+		获取内联样式
+*/
+
+/*
+经过以下测试
+1.直接通过style[attr]获取的属性若是没有设置则是为空!字符串(长度为0的字符串)，而parseInt(string)= NaN
+
+顺带学到和复习的东西
+	console.log(Number(""),Number(null),Number(String));  // 0  0
+	console.log(parseInt(""),parseInt(null),parseInt(String)); // NaN NaN
+2.我们发现我们的div被挡住了，采用伪元素来清除一下浮动试试效果
+*/
+	let el=document.getElementsByClassName("foo");
+	el[0].onclick=function(){
+		console.log("test");
+	}
+
+	const getStyle_1=(ele,attr)=>{
+		console.log("元素的属性值类型是"+typeof ele.style[attr]);
+		console.log(ele.className+"元素的"+attr+"属性值是:",ele.style[attr]);
+		console.log("----------------");
+	}
+
+	let box1=document.getElementsByClassName("box1")[0];
+	console.log(box1);
+	console.log(box1.style.width);
+	getStyle_1(box1,'width');
+	getStyle_1(box1,'background-color');
+
+
+	// let box2=document.getElementsByClassName("box2")[0];
+	// let test=new String();
+	// let box_test=box2.style.width;
+	// console.log(test==box_test);  // true
+	// console.log(test===box_test); //false
+	// console.log(typeof test,typeof box_test); // object string
+	// // 前面相等是因为先做了一次类型转换，将string转换成了object
+
+	let box2=document.getElementsByClassName("box2")[0];
+	getStyle_1(box2,'width'); //说明第一种方法已经不适用了，不使用于内嵌式
+
+	const getStyle_2=(ele,attr)=>{
+		// getComputedStyle("元素","伪类");
+		console.log("元素的属性值类型是"+typeof window.getComputedStyle(ele,null)[attr]);
+		console.log(ele.className+"元素的"+attr+"属性值是:",window.getComputedStyle(ele,null)[attr]);
+		console.log("----------------");
+	}
+	getStyle_2(box2,"width");
+	getStyle_2(box2,"background-color");
+
+	let box3=document.getElementsByClassName("box3")[0];
+	getStyle_2(box3,'width'); // 在这里说明这个方法依旧是可以用的，用于外部式css
+	getStyle_1(box3,'width'); // 这里说明方法 1 也不适用于外部式css
+
+	const getStyle_3=(ele,attr)=>{
+		console.log("元素的属性值类型是"+typeof ele.currentStyle[attr]);
+		console.log(ele.className+"元素的"+attr+"属性值是:",ele.currentStyle[attr]);
+		console.log("----------------");
+	}
+
+	// getStyle_3(box3,'width');
+	console.log(box3.currentStyle['width']);
+
+
+
+
+
+
+
+</script>
+</html>
