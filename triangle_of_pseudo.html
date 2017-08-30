@@ -3,8 +3,42 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style type="text/css">
+		#demo{
+			position: relative;
+			width: 100px;
+			height: 100px;
+			border: 2px solid #000;
+		}
+		#demo:before{
+			position: absolute;
+			content: "";
+			width: 0;
+			height: 0;
+			left: 100px;
+			top: 18px;
+			border-left: 12px solid black;
+			border-top: 12px solid transparent;
+			border-right: 12px solid transparent;
+			border-bottom: 12px solid transparent;
+		}
+		#demo:after{
+			position: absolute;
+			content: "";
+			width: 0;
+			height: 0;
+			left: 100px;
+			top: 20px;
+			border-left: 10px solid #fff;
+			border-top: 10px solid transparent;
+			border-bottom:10px solid transparent;
+			border-right: 10px solid transparent;
+		}
+	</style>
 </head>
 <body>
-	
+	<div id="demo">
+		
+	</div>
 </body>
 </html>
