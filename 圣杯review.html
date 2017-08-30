@@ -10,19 +10,37 @@
 		}
 		.container{
 			width: 100%;
+			min-width: 800px;
 		}
 		.middle{
+			box-sizing: border-box;
+			padding: 0 200px;
+			float: left;
 			width: 100%;
 			height: 300px;
 			background-color: #bfbfbf;
+		}
+		.left{
+			float: left;
+			margin-left: -100%;
+			width: 200px;
+			height: 300px;
+			background-color: green;
+		}
+		.right{
+			float: left;
+			margin-left: -200px;
+			width: 200px;
+			height: 300px;
+			background-color: yellow;
 		}
 	</style>
 </head>
 <body>
 	<div class="container">
-		<div class="middle"></div>
-		<div class="left"></div>
-		<div class="right"></div>
+		<div class="middle"><div>xxxx</div></div>
+		<div class="left"><h1>left</h1></div>
+		<div class="right"><h1>right</h1></div>
 	</div>
 </body>
 </html>
