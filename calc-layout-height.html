@@ -9,11 +9,31 @@
 			padding: 0;
 		}
 		ul#testTube{
+			margin-left: 300px;
+			margin-top: 10px;
 			width: 100px;
 			height: 300px;
 			list-style: none;
 			border-radius: 0 0 100px 100px;
-			border: 1px solid #033a52;
+			border: 8px solid #033a52;
+			color: #fff;
+		}
+		li:first-child{
+			height: calc(300px/10);
+			background-color: #555;
+		}
+		li:nth-child(2){
+			height: calc(300px/10*2);
+			background-color: #5D4646;
+		}
+		li:nth-child(3){
+			height: calc(300px/10 + 60px);
+			background-color: #AC9D9D;
+		}
+		li:last-child{
+			height: calc(300px/2 - 30px);
+			border-radius: 0 0 100px 100px;
+			background-color: #909090;
 		}
 	</style>
 </head>

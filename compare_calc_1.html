@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			zoom: 1;
+		}
+		.container:after,
+		.container:before{
+			content: '.';
+			width: 0;
+			height: 0;
+			display: block;
+			visibility: hidden;
+			clear: both;
+			/*overflow: hidden;*/
+		}
+		.container,.content,.sidebar{
+			box-sizing: border-box;
+			color: #fff;
+		}
+		.container{
+			width: 100%;
+			max-width: 80em;  /* 1280 */
+			padding: 2.5em; /* 40 */
+			background: #eee;
+		}
+		.content,
+		.sidebar{
+			padding: 10em 1.25em;
+		}
+		.content{
+			width: 80%;
+			float: left;
+			background-color: #8ac233;
+		}
+		.sidebar{
+			width: 16.666%;
+			float: right;
+			background-color: #8ac233;
+		}
+
+		@media only screen and (max-width: 40em) {
+			.content,
+			.sidebar{
+				width: 100%;
+				float: none;
+			}
+			.sidebar{
+				margin-top: 1.25em;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			
+		</div>
+		<div class="sidebar">
+			
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+/*
+		此处用来写注释，对于从来没有自己手写媒体查询版本自适应的我，这个案例来的真是及时。
+
+		好神奇啊！
+*/
+</script>
+</html>
