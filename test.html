@@ -1,80 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>css3 cal</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        html,
-        body {
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box
+    <title>Document</title>
+    <style type="text/css">
+        html{
+            background: #333;
         }
-
-        .header {
-            background: red;
-            height: 100px;
-        }
-
-        .footer {           
-            height: 100px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            box-sizing: border-box;
-            background-color: palevioletred
-        }
-
-        .header,
-        .footer,
-        .left,
-        .content,
-        .right {
-            border: 10px solid black;
-            box-sizing: border-box
-        }
-
-        .left {
-            margin: 20px 0;
-            background: green;
-            width: 100px;
-        }
-
-        .content {
-            margin: 20px 20px;
-            background-color: silver;
-            width: calc(100% - 240px);
-            width: -webkit-calc(100% - 240px);
-            width: -moz-cal(100%-240px);
-        }
-
-        .right {
-            margin: 20px 0;
-            background-color: yellow;
-            width: 100px;
-        }
-
-        .left,
-        .content,
-        .right {
+        div{
             float: left;
-            height: calc(100% - 240px);
-            height: -webkit-calc(100% - 240px);
-            height: -moz-cal(100%-240px);
+            margin: 10px;
+            color: #fff;
+            text-overflow: ellipsis;
+            line-height: 20px;
+        }
+        #box1{
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(#fff,#f22);
+        }
+        .text-control{
+            padding: 0;
+            overflow: hidden;
+            -webkit-line-clamp:5;
+            -webkit-box-orient:vertical;
+            display: -webkit-box;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(to top,green,blue);
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        #box3{
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(180deg,#fff 0%,#333 100%);
+        }
+        #box4{
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg,#000,#f00 40%,#090);
+        }
+        #box5{
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg,yellow 30%,red 70%,green);
+        }
+
+        #angle1{
+            margin-left: 100px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(to left,#ace,#f98);
+        }
+        #angle2{
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(30deg,#acd,#f23);
+        }
+        #angle3{
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(180deg,#ace,#f23);
+        }
+        #cut1{
+            margin-left: 100px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(-45deg,#111 90px,#58a 0);
+        }
+        #cut2{
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(30deg,#000 50px,#98f 0);
+        }
+        #cut3{
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg,transparent 20px,#9f9 0);
         }
     </style>
 </head>
-
 <body>
-    <div class="header">header</div>
-    <div class="left">left</div>
-    <div class="content">content</div>
-    <div class="right">right</div>
-    <div class="footer">footer</div>
+    <div id="box1" class="text-control" alt="test" title="test">默认是  to bottom，从上到下，也可以写 180 deg .顺便测试下多行省略号的实现。 </div>
+    <div id="box2">从下到上111111111111111111</div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+    <div id="box5"></div>
+    <div id="angle1"></div>
+    <div id="angle2"></div>
+    <div id="angle3"></div>
+    <div id="angle4"></div>
+    <div id="angle5"></div>
+    <div id="cut1"></div>
+    <div id="cut2"></div>
+    <div id="cut3"></div>
 </body>
-
 </html>
