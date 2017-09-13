@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>切角效果的再次实现和再学习</title>
+	<style type="text/css">
+		#box{
+			margin: 20px auto;
+			width: 200px;
+			height: 200px;
+			background: #8bc34a;
+			background: linear-gradient(135deg, transparent 15px, #8BC34A 0) top left,
+                linear-gradient(-135deg, transparent 15px, #8BC34A 0) top right,
+                linear-gradient(-45deg, transparent 15px, #8BC34A 0) bottom right,
+                linear-gradient(45deg, transparent 15px, #8BC34A 0) bottom left;
+            background-repeat: no-repeat;
+            background-size: 50% 50%;
+		}
+		#box span{
+			margin-left: 20px;
+		}
+		#pie{
+			margin: 10px auto;
+			width:140px;
+			height: 140px;
+			background: #8bc34a;
+			border-radius: 50%;
+			background-image: linear-gradient(to right,transparent 50%,#655 0);
+		}
+		#pie::before{
+			content: '';
+			display: block;
+			margin-left: 50%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"><span>四面切角和linear-gradient的最后一次学习</span></div>
+	<div id="pie">这个地方感觉有些难，而且感觉以后用不上，所以暂时就先这样过了吧。</div>
+</body>
+</html>
