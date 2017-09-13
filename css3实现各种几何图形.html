@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.figure{
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+		}
+		.a{
+			background: #f02312;
+			border-radius: 50%;
+		}
+		.b{
+			background: #ace;
+			border-radius: 100% 0 0 0;
+		}
+		.c{
+			position: relative;
+			width: 180px;
+			height: 200px;
+			border-radius: 50%;
+			background: #666;
+		}
+		.cx{
+			position: absolute;
+			width: 100px;
+			height: 150px;
+			top: 50%;
+			left: 50%;
+			margin-top: -75px;
+			margin-left: -50px;
+			border-radius: 50%;
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="figure a"></div>
+	<div class="figure b"></div>
+	<div class="figure c">
+		<div class="cx"></div>
+	</div>
+	<div class="figure"></div>
+	<div class="figure"></div>
+</body>
+</html>
