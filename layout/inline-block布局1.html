@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+/*		ul,li,ol{
+			margin: 0;
+			padding: 0;
+		}*/
+		ul,li,ol{
+			list-style: none;
+		}
+		ul.one,ul.test{
+			background-color: #f123ff;
+		}
+		li.a{
+			width: 200px;
+			height: 60px;
+			display: inline-block;
+			background-color: #663;
+		}
+		li.c{
+			width: 200px;
+			height: 60px;
+			display: inline-block;
+			background-color: #663;
+		}
+		ul.two{
+			background-color: #388333;
+		}
+		li.b{
+			float: left;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			width: 200px;
+			height: 60px;
+			background-color: #663;
+		}
+		.clearfix:after{
+			content: "";
+			display: block;
+			height: 0;
+			clear: both;
+			visibility: hidden;
+		}
+
+		ul.four{
+			background-color: #666;
+			padding: 10px;
+			text-align: center;
+
+			width: 60%;
+		}
+		.solve{
+			font-size: 0;
+			/*letter-spacing: -4px;*/
+		}
+		li.d{
+			margin-right: 10px;
+			width: 200px;
+			height: 60px;
+			display: inline-block;
+			background-color: #fff;
+			font-size: 16px;
+			vertical-align: top;
+		}
+		li.super{
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<ul class="one">
+			<li class="a"></li><li class="a"></li><li class="a"></li><li class="a"></li>
+		</ul>
+		<ul class="test">
+			<li class="c">关于display:inline-block之间的间隙问题</li>
+			<li class="c">此处与上面对比，具体 ctrl+u  看结构即可发现奥妙</li>
+			<li class="c">test</li>
+			<li class="c">但是这里又出现了一个新的问题，有字的这三个框架会往下飘</li>
+		</ul>
+		<ul class="two clearfix">
+			<li class="b">这里的部分是float布局，我们在这里写字貌似是不会有影响的。</li>
+			<li class="b"></li>
+			<li class="b">这是个很有趣的现象哈哈哈，</li>
+			<li class="b"></li>
+		</ul>
+		<ul class="four solve">
+			<li class="d super">为了解决第一行和第二行会出现的问题</li>
+			<li class="d">（实际上第一行也出了问题，只是因为我们没有往里面加字，所以看起来好像是没有问题的）</li>
+			<li class="d"></li>
+			<li class="d"></li>
+		</ul>
+
+		<span>
+			这里我们基本能够发现使用display:inline-block布局的方式，有这些
+
+			弊端：
+			1.需要使用font-size:0;来清楚我们标签之间的空格。
+
+			好处有：
+			1.自适应布局
+			2.能够使用  text-align:center 和 vertical-aligen:top 进行居中
+		</span>
+	</div>
+</body>
+</html>

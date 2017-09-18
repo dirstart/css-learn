@@ -4,99 +4,31 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style type="text/css">
-        html{
-            background: #333;
-        }
-        div{
-            float: left;
-            margin: 10px;
-            color: #fff;
-            text-overflow: ellipsis;
-            line-height: 20px;
-        }
-        #box1{
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(#fff,#f22);
-        }
-        .text-control{
-            padding: 0;
+        *{margin: 0;padding: 0;}
+        #wrap{
             overflow: hidden;
-            -webkit-line-clamp:5;
-            -webkit-box-orient:vertical;
-            display: -webkit-box;
         }
-        #box2{
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(to top,green,blue);
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
+        #sidebar{
+            height: 240px;
+            width: 300px;
+            float: right;
+            background-color: #eee;
         }
-        #box3{
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(180deg,#fff 0%,#333 100%);
+        #content{
+            height: 340px;
+            background-color: #999;
+            margin-right: 310px;
         }
-        #box4{
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(45deg,#000,#f00 40%,#090);
-        }
-        #box5{
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(45deg,yellow 30%,red 70%,green);
-        }
-
-        #angle1{
-            margin-left: 100px;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(to left,#ace,#f98);
-        }
-        #angle2{
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(30deg,#acd,#f23);
-        }
-        #angle3{
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(180deg,#ace,#f23);
-        }
-        #cut1{
-            margin-left: 100px;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(-45deg,#111 90px,#58a 0);
-        }
-        #cut2{
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(30deg,#000 50px,#98f 0);
-        }
-        #cut3{
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg,transparent 20px,#9f9 0);
+        #footer{
+            background-color: #2323f3;
         }
     </style>
 </head>
 <body>
-    <div id="box1" class="text-control" alt="test" title="test">默认是  to bottom，从上到下，也可以写 180 deg .顺便测试下多行省略号的实现。 </div>
-    <div id="box2">从下到上111111111111111111</div>
-    <div id="box3"></div>
-    <div id="box4"></div>
-    <div id="box5"></div>
-    <div id="angle1"></div>
-    <div id="angle2"></div>
-    <div id="angle3"></div>
-    <div id="angle4"></div>
-    <div id="angle5"></div>
-    <div id="cut1"></div>
-    <div id="cut2"></div>
-    <div id="cut3"></div>
+    <div id="wrap">
+        <div id="sidebar">固定宽度区</div>
+        <div id="content">自适应区</div>
+    </div>
+    <div id="footer">footer区</div>
 </body>
 </html>
