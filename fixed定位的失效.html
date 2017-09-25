@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.fix{
+			position: fixed;
+			width: 100px;
+			height: 100px;
+			background-color: #333;
+			top: 100px;
+		}
+		.lose_effect{
+			width: 50px;
+			height: 50px;
+			background-color: #f60;
+			transform: scaleX(-1);
+		}
+		.lose_effect2{
+			margin-left: 400px;
+			width: 50px;
+			height: 50px;
+			background-color: #f60;
+			transform: scaleX(-1);
+		}
+		.fix2{
+			position: fixed;
+			width: 30px;
+			height: 30px;
+			background-color: #392333;
+			right: 0;
+			top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="lose_effect">
+		<span>aaaa</span>
+	</div>
+
+	<div class="fix">
+		<div class="lose_effect">
+			<span>aaaa</span>
+		</div>
+	</div>
+
+	<div class="lose_effect2">
+		<div class="fix2">
+			<span>aaaa</span>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	// 虽然transform只是改变了我们里面的span，可是作为父级，它也改变了作为自己的  fixed 定位，这里我们先阐述现象，具体等明天再来讨论。
+</script>
+</html>
