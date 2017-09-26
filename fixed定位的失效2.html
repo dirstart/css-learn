@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			height: 2000px;
+		}
+		#relative{
+			position: relative;
+			width: 100px;
+			height: 100px;
+			background: green;
+		}
+		#transform{
+			width: 80px;
+			height: 80px;
+			background-color: red;
+			/*transform: scale(1);*/
+		}
+		#fixed{
+			width: 10px;
+			height: 10px;
+			background-color: yellow;
+			position: fixed;
+			top: 400px;
+			left: 400px;
+		}
+	</style>
+</head>
+<body>
+	<div id="relative">
+		<div id="transform">
+			<div id="fixed">
+				
+			</div>
+		</div>
+	</div>
+</body>
+<!-- 这是网上的例子，再一次地证明了 fixed 定位会因为 transform 的出现而失效（主要是作为父级的时候，若 transform不是出现在fixed的祖先元素，则不成立。我们通过注释可以发现原来的fixed变为了absolute） -->
+</html>
