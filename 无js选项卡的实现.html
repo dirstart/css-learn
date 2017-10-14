@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul,li,ol{
+			list-style: none;
+			color: #fff;
+		}
+		.box{
+			margin: 10px auto;
+			width: 400px;
+			height: 100px;
+			background-color: #111f2f;
+			text-align: center;
+			overflow: hidden;
+		}
+		li{
+			width: 400px;
+			height: 100px;
+			line-height: 100px;
+			font-size: 32px;
+		}
+		.anchor{
+			width: 400px;
+			height: 40px;
+			line-height: 40px;
+			background-color: #111f2f;
+			margin: 0 auto;
+			text-align: right;
+		}
+		a{
+			margin-top: 5px;
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			line-height: 40px;
+			list-style: none;
+			color: #fff;
+			font-size: 20px;
+			text-decoration: none;
+			cursor: pointer;
+			background-color: #bfbfbf;
+			text-align: center;
+			line-height: 30px;
+		}
+		a:hover{
+			background-color: #239099;
+		}
+	</style>
+</head>
+<body>
+	<ul class="box">
+		<li id="one">1</li>
+		<li id="two">2</li>
+		<li id="three">3</li>
+		<li id="four">4</li>
+	</ul>
+	<div class="anchor">
+		<a href="#one">1</a>
+		<a href="#two">2</a>
+		<a href="#three">3</a>
+		<a href="#four">4</a>
+	</div>
+	<span id="show" style="font-size:40px;margin-left:300px">now</span>
+</body>
+<script type="text/javascript">
+	let show=document.getElementById("show");
+	document.onclick=function(){
+		show.innerHTML=location.hash;
+	}
+</script>
+</html>
