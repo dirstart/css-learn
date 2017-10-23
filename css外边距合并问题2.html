@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			margin-left: 500px;
+			width: 200px;
+			height: 120px;
+			background-color: #666;
+		}
+		#box{
+			margin: 20px;
+			width: 100px;
+			height: 100px;
+			background-color: #878;
+		}
+		#content{
+			/*margin-top: 10px;*/
+			margin: 10px;
+			width: 50px;
+			height: 50px;
+			background-color: #180;
+		}
+		.wrap2{
+			margin: 0 auto;
+			width: 200px;
+			height: 200px;
+			background-color: #999;
+		}
+		.box2{
+			margin-bottom: 50px;
+			margin-top: 50px;
+			width: 100px;
+			height: 0;
+			background-color: #000;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="box">
+			我的margin-top:10px
+			<div id="content">
+				我的margin-top:20px
+			</div>
+		</div>
+	</div>
+
+	<p>当内容为空的时候，里面的20px和外面的10px都可以合并，有字的时候就不一样了。</p>
+
+	<div class="wrap2">
+		<div class="box2">1</div>
+		12
+	</div>
+	<pre>
+		上面的1就体现出来了，里面的box2是有margin-bottom的。
+	</pre>
+	<div class="wrap2">
+		<div class="box2"></div>
+		12
+	</div>
+	<h3>
+		但是这里的呢，我们就发现了！！这里空div的margin-bottom被吃掉了！！跟上面的margin-top合并了！
+		但这个前提其实是非常严格的！！连border都不能有知道吗！！！！切记！！！
+	</h3>
+	<h3>跟着我一起背！空div的margin-bottom和margin-top会合并成一个margin-top!!!厉害了我的哥！</h3>
+</body>
+</html>

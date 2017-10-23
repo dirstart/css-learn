@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #666;
+		}
+		div{
+			margin: 0 auto;
+			color: #fee;
+		}
+		p{
+			width: 500px;
+			margin: 10px auto;
+			color: #fff;
+		}
+		#box1{
+			width: 100px;
+			height: 100px;
+			background-color: #1239ff;
+			margin-bottom: 100px;
+		}
+		#box2{
+			width: 100px;
+			height: 100px;
+			background-color: #f2f;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		外边距合并：当两个垂直边距相遇，他们将形成一个外边距。
+	</p>
+	<div id="box1">我的下边距是100px.</div>
+	<div id="box2">我的上边距是50px.</div>
+	<p>
+		只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框、浮动框或绝对定位之间的外边距不会合并。
+		  1、在常规文档流中，2个或以上的块级盒模型相邻的垂直margin会被折叠。 
+		　　    最终的margin值计算方法如下： 
+		        a、全部都为正值，取最大者；
+		        b、不全是正值，则都取绝对值，然后用正值减去最大值；
+		        c、没有正值，则都取绝对值，然后用0减去最大值。
+	</p>
+</body>
+</html>
